@@ -1,5 +1,3 @@
-let $body = document.body;
-
 function newElement(tagName, className = '', href = null, src = null, text = null) {
     const element = document.createElement(tagName)
     if (className != '') element.className = className
@@ -11,6 +9,7 @@ function newElement(tagName, className = '', href = null, src = null, text = nul
 
 function createFooterElement() {
     // PAGE VARIABLES
+    let $body = document.body;
     let $img = document.querySelector('.product__image');
     let $productName = document.querySelector('.productName');
     let $skuBestPrice = document.querySelector('.skuBestPrice').innerText;
@@ -29,7 +28,6 @@ function createFooterElement() {
 
     // DIV - BODY
     let $divFooter = newElement('div', 'product-footer')
-
     let actionsProd = newElement('div', 'actions-prod')
     let infoProd = newElement('div', 'info-prod')
 
@@ -102,9 +100,5 @@ function addStyles(divFooter, imageProd, divInfo, textTitle, actionsProd, button
             buttonActPay.style.fontSize = "12px";
             buttonActPay.innerText = text;
         }, time)
-    }
-
-    function openPF() {
-        divFooter.style.display = "block";
     }
 }
